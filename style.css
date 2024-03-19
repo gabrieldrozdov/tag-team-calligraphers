@@ -1,0 +1,106 @@
+@font-face {
+	font-family: "That Then This";
+	src: url("GDThatThenThisVF.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Authentic";
+	src: url("Authentic.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+@keyframes varifont {
+	from {font-variation-settings: "DIST" 100, "VARI" 0}
+	to {font-variation-settings: "DIST" 100, "VARI" 100}
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	animation: varifont 2s ease-in-out infinite alternate;
+	font-family: "Authentic", sans-serif;
+}
+.container {
+	display: grid;
+	grid-template-columns: 600px 1fr;
+}
+main {
+	background-color: #f2f2f2;
+	padding: 40px;
+	font-size: 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+}
+section {
+	display: grid;
+	grid-template-columns: 80px 1fr;
+}
+section div {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-wrap: pretty;
+}
+h1 {
+	font-family:'That Then This', sans-serif;
+	font-size: 48px;
+}
+h2 {
+	font-size: 48px;
+	line-height: 1em;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	padding: 5px;
+	border-top: 10px solid red;
+	text-align: center;
+}
+.highlight {
+	font-family:'That Then This', sans-serif;
+}
+.game {
+	border: 10px solid red;
+	margin: 20px;
+	position: sticky;
+	top: 20px;
+	height: calc(100dvh - 40px);
+	display: grid;
+	grid-template-rows: 50px 1fr;
+}
+.game-navbar {
+	border-bottom: 10px solid red;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	gap: 10px;
+	padding: 10px;
+}
+.game-navbar div {
+	background-color: black;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+}
+.game-canvas {
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+canvas {
+	width: 100% !important;
+	height: 100% !important;
+}
+@media only screen and (max-width: 1000px) {
+	.container {
+		grid-template-columns: 1fr;
+	}
+	h1 {
+		font-size: 32px;
+	}
+	.game {
+		width: calc(100vw - 40px);
+	}
+}
